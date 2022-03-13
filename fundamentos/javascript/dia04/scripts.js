@@ -173,11 +173,85 @@
 // Parte 2 - Functions
 
 // 1 - Crie uma função que receba uma string e retorne true se for um palíndromo , ou false , se não for. RESOLVIDO
-function isPalindrome(string) {
-  if (string.split("").reverse().join("") === string) {
-    return true;
-  }
-  return false;
-}
+// function isPalindrome(string) {
+//   if (string.split("").reverse().join("") === string) {
+//     return true;
+//   }
+//   return false;
+//}
 
-// 2 - Crie uma função que receba um array de inteiros e retorne o índice do maior valor.
+// 2 - Crie uma função que receba um array de inteiros e retorne o índice do maior valor. Funciona mas quebra caso o array tiver apenas numeros negativos. Como resolver? Exemplo modificado para contar quantas vezes o maior indice aparece no array.
+// let counter = 0;
+// function biggestIndex(array) {
+//   let maiorIndex = 0;
+//   for (let i in array) {
+//     if (array[i] > array[maiorIndex]) {
+//       maiorIndex = i;
+//     } else if (array[i] == array[maiorIndex]) {
+//       counter++;
+//     }
+//   }
+//   return maiorIndex;
+// }
+// console.log(
+//   "O index do maior valor é: ",
+//   biggestIndex([5, 2, 5, -4, 5]),
+//   " e ele ocorre ",
+//   counter,
+//   " vezes"
+// );
+
+// 3 - Crie uma função que receba um array de inteiros e retorne o índice do menor valor.
+
+// function menorIndex(array) {
+//   lowestIndex = 0;
+//   for (let i in array) {
+//     if (array[i] < array[lowestIndex]) {
+//       lowestIndex = i;
+//     }
+//   }
+//   return lowestIndex;
+// }
+// console.log(menorIndex([112, 31, 21, 41, 63]));
+
+// 4 - Crie uma função que receba um array de nomes e retorne o nome com a maior quantidade de caracteres. Resolvido
+
+// function maiorNome(array) {
+//   let maiorNome = "";
+//   for (let i of array) {
+//     if (i.length > maiorNome.length) {
+//       maiorNome = i;
+//     }
+//   }
+//   return maiorNome;
+// }
+// console.log(
+//   maiorNome(["José", "Lucas", "Nádia", "Fernanda", "Cairo", "Joana"])
+// );
+
+// let array = ["José", "Lucas", "Nádia", "Fernanda", "Cairo", "Joana"];
+// for (let i of array) {
+//   console.log(array[i]);
+// } coloquei essa parte apenas para testar
+
+// 5 - Crie uma função que receba um array de inteiros e retorne o inteiro que mais se repete. Ver Gabarito
+
+// 6 - Crie uma função que receba um número natural (número inteiro não negativo) N e retorne o somatório de todos os números de 1 até N
+
+// function somaTodos(num) {
+//   let resultado = 0;
+//   for (let i = 1; i <= num; i++) {
+//     resultado = resultado + i;
+//   }
+//   return resultado;
+// }
+// console.log(somaTodos(6));
+
+// function fatorial(n) { exemplo apenas para relembrar
+//   resultado = n;
+//   for (let i = 1; i < n; i++) {
+//     resultado *= i;
+//   }
+//   return resultado;
+// }
+// console.log(fatorial(5));
