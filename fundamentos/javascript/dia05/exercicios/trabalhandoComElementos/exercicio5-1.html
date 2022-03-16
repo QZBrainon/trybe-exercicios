@@ -62,7 +62,56 @@
       const h1 = document.createElement("h1");
       h1.innerText = "Exercício 5.2 - JavaScript DOM";
       body[0].appendChild(h1);
-      //   -------------
+
+      //   Requisito 2
+      const main = document.createElement("main");
+      main.className = "main-content";
+      body[0].appendChild(main);
+      // Requisito 3
+      const section = document.createElement("section");
+      section.className = "center-content";
+      main.appendChild(section);
+      // Requisito 4
+      const p = document.createElement("p");
+      p.innerText = "Algum texto";
+      section.appendChild(p);
+      // Requisito 5
+      const sectionLeft = document.createElement("section");
+      sectionLeft.className = "left-content";
+      main.appendChild(sectionLeft);
+      // Requisito 6
+      const sectionRight = document.createElement("section");
+      sectionRight.className = "right-content";
+      main.appendChild(sectionRight);
+
+      // Requisito 7
+      const img = document.createElement("img");
+      img.className = "small-image";
+      img.src = "https://picsum.photos/200";
+      sectionLeft.appendChild(img);
+
+      // Requisito 8
+      const lista = document.createElement("ul");
+      let nomePorExtenso = [
+        "Um",
+        "Dois",
+        "Três",
+        "Quatro",
+        "Cinco",
+        "Seis",
+        "Sete",
+        "Oito",
+        "Nove",
+        "Dez",
+      ];
+      for (let i = 0; i < 10; i++) {
+        let listaItem = document.createElement("li");
+        listaItem.innerText = nomePorExtenso[i];
+        lista.appendChild(listaItem);
+      }
+      sectionRight.appendChild(lista);
+
+      // Requisito 9
     </script>
   </body>
 </html>
