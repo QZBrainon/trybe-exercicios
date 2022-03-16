@@ -1,0 +1,39 @@
+<main id="paiDoPai">
+  <section id="pai">
+    <section id="primeiroFilho"></section>
+    <section id="elementoOndeVoceEsta">
+      <section id="primeiroFilhoDoFilho"></section>
+      <section id="segundoEUltimoFilhoDoFilho"></section>
+    </section>
+    Atenção!
+    <section id="terceiroFilho"></section>
+    <section id="quartoEUltimoFilho"></section>
+  </section>
+  <script>
+    const ondeEsta = document.getElementById("elementoOndeVoceEsta");
+    ondeEsta.parentElement.style.color = "blue";
+    const primeiroFilho = document.getElementById("primeiroFilhoDoFilho");
+    primeiroFilho.innerText = "Texto Alterado";
+    const pai = document.getElementById("pai");
+    const novoFilho = document.createElement("div");
+    novoFilho.className = "novo-filho";
+    novoFilho.id = "novo-filho";
+    pai.appendChild(novoFilho);
+    const terceiroFilho = document.createElement("div");
+    terceiroFilho.id = "terceiroFilhoDoFilho";
+    terceiroFilho.innerText = "Terceiro Filho";
+    ondeEsta.appendChild(terceiroFilho);
+    const maisUmFilho = ondeEsta.firstElementChild;
+    const outroFilho = document.createElement("div");
+    outroFilho.id = "filho do filho do primeiro filho";
+    maisUmFilho.appendChild(outroFilho);
+    const mainPai = document.querySelectorAll("#paiDoPai");
+
+    // console.log(ondeEsta.previousElementSibling);
+    // console.log(ondeEsta.nextSibling);
+    // console.log(ondeEsta.nextElementSibling);
+    // console.log(pai.lastElementChild.previousElementSibling); // ou
+    // console.log(pai.children[2]);
+    // pai.appendChild("div");
+  </script>
+</main>
