@@ -112,6 +112,27 @@
       sectionRight.appendChild(lista);
 
       // Requisito 9
+
+      for (let i = 0; i < 3; i++) {
+        const h3 = document.createElement("h3");
+        main.appendChild(h3);
+      }
+
+      //Requisito 10
+      h1.className = "title";
+
+      // Requisito 12
+      sectionLeft.parentElement.removeChild(sectionLeft);
+
+      // Requisito 13
+      sectionRight.style.marginRight = "auto";
+
+      // Requisito 14
+      section.parentElement.style.backgroundColor = "green";
+
+      // Requisito 15
+      lista.removeChild(lista.lastElementChild);
+      lista.removeChild(lista.lastElementChild);
     </script>
   </body>
 </html>
