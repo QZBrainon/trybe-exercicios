@@ -32,19 +32,17 @@ function addDates(array) {
   for (let i in array) {
     const datas = document.createElement("li");
     datas.innerText = array[i];
-    if (array[i] == 24 || array[i] == 25 || array[i] == 31) {
+    if (array[i] == 24 || array[i] == 31) {
       datas.className = "day holiday";
-    } else if (
-      array[i] == 4 ||
-      array[i] == 11 ||
-      array[i] == 18 ||
-      array[i] == 25
-    ) {
+    } else if (array[i] == 4 || array[i] == 11 || array[i] == 18) {
       datas.className = "day friday";
+    } else if (array[i] == 25) {
+      datas.className = "day holiday friday";
     } else datas.className = "day";
     dayDatas.appendChild(datas);
   }
 }
+
 addDates(dezDaysList);
 
 const btnContainer = document.getElementsByClassName("buttons-container");
@@ -75,4 +73,43 @@ function sextaBtn(string) {
 sextaBtn("Sexta-feira");
 
 const botaoSexta = document.getElementById("btn-friday");
-botaoSexta.addEventListener("click", function () {});
+const fridayDays = document.getElementsByClassName("friday");
+botaoSexta.addEventListener("click", function () {
+  for (let i in fridayDays) {
+    if (fridayDays[i].innerText !== "SEXTOU!") {
+      fridayDays[i].innerText = "SEXTOU!";
+    }
+  }
+});
+
+// const dayDatas = document.querySelector("#days");
+// const dayDatasChildren = dayDatas.children;
+// for (let i in dayDatasChildren) {
+//   dayDatasChildren[i].addEventListener("mouseenter", function (event) {
+//     event.target.style.fontSize = "30px";
+//   });
+//   dayDatasChildren[i].addEventListener("mouseleave", function (event) {
+//     event.target.style.fontSize = "";
+//   });
+// }
+
+const minhasTarefas = document.getElementsByClassName("my-tasks");
+
+function addTarefa(string) {
+  let tarefa = document.createElement("span");
+  tarefa.innerText = string;
+  minhasTarefas[0].appendChild(tarefa);
+}
+addTarefa("Projeto");
+
+let div = document.createElement("div");
+function adicionaLegenda(cor) {
+  div.className = "task";
+  div.style.backgroundColor = cor;
+  minhasTarefas[0].appendChild(div);
+}
+adicionaLegenda("blue");
+
+div.addEventListener("click", function (event) {
+  event.target.className = "task selected";
+});
